@@ -1,6 +1,5 @@
 # Project 1
 
-<<<<<<< HEAD
 Web Programming with Python and JavaScript
 =======
 This is a Flask web app that utilizes a PostgreSQL database that was created for Harvard's CS50: Web Programming with Python and JavaScript course.  HTML and Jinja2 are used to create a simple front end for this web app.
@@ -24,4 +23,4 @@ To use this web app, a key from Goodreads is necessary (can be found here: https
 Once obtained, set up an environment variable shown below in order to run the app 
 
 GOODREADS_KEY = 'Your Key Here'
->>>>>>> e0aa12a... Initial Commit
+
