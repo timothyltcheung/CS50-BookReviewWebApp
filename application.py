@@ -96,12 +96,9 @@ def book(isbn):
             return render_template('error.html', message = "Score must be between 1-5")
     book = db.execute("SELECT * FROM books WHERE isbn = :isbn", {"isbn": isbn}).fetchone()
     reviews = db.execute("SELECT * FROM reviews LEFT JOIN users ON reviews.user_id = users.id WHERE isbn =:isbn", {"isbn": isbn})
-<<<<<<< HEAD
     res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "Eei1Pig7Rov3f6dMWX9A", "isbns": isbn})
-=======
     # Call to Goodreads API
     res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": GoodreadsKey, "isbns": isbn})
->>>>>>> e0aa12a... Initial Commit
     goodreadsData = [res.json()['books'][0]['average_rating'], res.json()['books'][0]['work_ratings_count']]
     return render_template('book.html', book = book, reviews = reviews, goodreads = goodreadsData)
 
